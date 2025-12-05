@@ -8,8 +8,8 @@ Demo: [JavaScript Drum Kit](https://cathmt76.github.io/JavaScript30-challenge/1-
 
 ### 1. `addEventListener()` for `keydown` event
 
-```
-window.addEventListener("keydown", playSound)
+```javascript
+window.addEventListener("keydown", playSound);
 ```
 
 The script to play the corresponding drum sound (e.g. "snare") will fire on `keydown` of one of the "drum keys" (e.g. <kbd>J<kbd>).
@@ -20,16 +20,16 @@ The drum key div and its corresponding sound are mapped using the `data-key` att
 
 The drum key `<div>`:
 
-```
+```javascript
 <div data-key="74" class="key">
-        <kbd>J</kbd>
-        <span class="sound">snare</span>
-      </div>
+  <kbd>J</kbd>
+  <span class="sound">snare</span>
+</div>
 ```
 
 The drum sound `<audio>`:
 
-```
+```html
 <audio data-key="74" src="sounds/snare.wav"></audio>
 ```
 
@@ -37,15 +37,15 @@ The drum sound `<audio>`:
 
 When the `keydown` event is triggered, we use `e.keyCode` to identify which key has been pressed and to play the corresponding drum sound.
 
-```
+```javascript
 function playSound(e) {
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
-        if (!audio) return;
-        audio.currentTime = 0;
-        audio.play();
-      }
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+}
 ```
 
 In the above, template literals are used to avoid the `=` in the attribute selector being mistaken for a variable assignment in JavaScript.
@@ -56,7 +56,7 @@ In this example, the drum key div should take on this CSS style on keydown:
 
 **CSS**:
 
-```
+```CSS
 .playing {
   transform: scale(1.1);
   border-color: #ffc600;
@@ -68,36 +68,32 @@ So we use `classList.add` to add the class of `playing` to the drum key div that
 
 **JS**:
 
-```
+```javascript
 function playSound(e) {
-        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
+  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+  const key = document.querySelector(`.key[data-key="${e.keyCode}"]`);
 
-        if (!audio) return;
-        audio.currentTime = 0;
-        audio.play();
-        key.classList.add("playing");
-      }
+  if (!audio) return;
+  audio.currentTime = 0;
+  audio.play();
+  key.classList.add("playing");
+}
 ```
 
 ### 5. "Switch" CSS style back off: `addEventListener()` for `transitionend`
 
-```
+```javascript
 const keys = document.querySelectorAll(".key");
-      keys.forEach((key) =>
-        key.addEventListener("transitionend", removeTransition)
-      );
-
+keys.forEach((key) => key.addEventListener("transitionend", removeTransition));
 ```
 
 We have to use a `forEach()` or loop to add the event listener at the individual div level as `transitionend` does not bubble up to the `Document` or `Window` level.
 
-```
+```javascript
 function removeTransition(e) {
-        if (e.propertyName !== "transform") return;
-        this.classList.remove("playing");
-      }
-
+  if (e.propertyName !== "transform") return;
+  this.classList.remove("playing");
+}
 ```
 
 Then `this.classList.remove("playing")` is used to remove the `playing` class from the div so it reverts to its default style.
