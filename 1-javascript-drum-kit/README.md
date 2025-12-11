@@ -1,6 +1,6 @@
 # 01 - JavaScript Drum Kit
 
-![Screenshot of HTML drum kit. There are nine buttons labelled with the corresponding drum sound.]()
+![Screenshot of HTML drum kit. There are nine buttons labelled with the corresponding drum sound.](https://github.com/CathMT76/JavaScript30-challenge/blob/2ba892ed9395b09da672f55f3a9109c1a65b2e66/1-javascript-drum-kit/screenshot-day-1.jpg)
 
 Demo: [JavaScript Drum Kit](https://cathmt76.github.io/JavaScript30-challenge/1-javascript-drum-kit/)
 
