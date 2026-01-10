@@ -4,7 +4,7 @@
 
 ## Demo
 
-<video controls src="https://vimeo.com/1153121324?fl=ip&fe=ec" title="Screen recording of CSS Variables demo"></video>
+<video src="https://github.com/user-attachments/assets/b1c23813-1860-4c5e-b46e-d090fee051fc" width="300" controls></video>
 
 ## Key concepts
 
