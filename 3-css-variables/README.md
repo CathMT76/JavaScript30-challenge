@@ -4,7 +4,7 @@
 
 ## Demo
 
-<video controls src="https://github.com/CathMT76/JavaScript30-challenge/blob/8f5bb65d0de91f15cbcf0e30844ed94fcf2962d3/3-css-variables/3-css-variables-demo.mov" title="Screen recording of CSS Variables demo"></video>
+<video controls src="https://vimeo.com/1153121324?fl=ip&fe=ec" title="Screen recording of CSS Variables demo"></video>
 
 ## Key concepts
 
